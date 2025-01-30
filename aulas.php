@@ -3,6 +3,7 @@ session_start();
 
 if (!isset($_SESSION['nivel'])) {
     header("Location: index.php");
+    
 }
 $nivel = $_SESSION['nivel'];
 if ($nivel === "instrutor") {
