@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,24 +8,26 @@
     <link rel="shortcut icon" href="./img/HW-icon.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="cadastroIns.css">
-    <title>Login Instrutor - Power Gym</title>
+    <link rel="stylesheet" href="cadastroAlu.css">
+    <title>Login aluno - Power Gym</title>
 </head>
 <body>
-    <section id="secao-login">
-        <div id="box-login">
+<section class="secao-cadastro secaoAlu">
+    
+    <div class="box-cadastro">
         <form action="" method="POST">
             <h1>Entre na sua conta</h1>
-                    <label for="email">Email</label>
-                    <input class="inserir" type="email" name="email" required>
-
-                    <label for="senha">Senha</label>
-                    <input id="senha-campo" class="inserir" type="password" name="senha" required>
-                    <div id='mostrar'>
-                        <input type='checkbox' onclick='mostrarSenha()'> Mostrar senha
-                    </div>
-
-                    <?php
+            <label for="email">Email</label>
+            <input class="campo-inserir" type="email" name="email" required>
+            
+            <label for="senha">Senha</label>
+            <input class="campo-inserir" id="senha-campo" type="password" name="senha" required>
+            <div id='mostrar'>
+                <input type='checkbox' onclick='mostrarSenha()'> Mostrar senha
+            </div>
+            
+            <button id="botao-cadastrar" type="submit" onclick="window.location='index.php'">Cadastrar</button>
+            <?php
 
                         session_start();
                         include 'php/conexao.php';
@@ -53,16 +57,7 @@
                             }
                         }
                     ?>
-
-                    <button id="entrar" type="submit">Entrar</button>
-                    <p class="celular">Não tem uma conta? <a href="./cadastroInstrutor.php">Cadastre-se!</a></p>
-                </form>
-        </div>
-        <div id="box-welcome">
-            <h2>Não tem uma conta?</h2>
-            <p>Entre com seus dados pessoais e comece sua jornada conosco</p>
-            <button id="cadastrar-button" onclick="window.location='./cadastroInstrutor.php'"><a href="./cadastroInstrutor.php">Cadastre-se</a></button>
-        </div>
+        </form>
     </div>
 </section>
 <script>

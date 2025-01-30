@@ -41,7 +41,16 @@
     color: white;
     margin: 10px 0 5px;
 }
-
+.secaoAlu{
+    margin-top: 70px;
+    width: 500px;
+    height: 540px;
+}
+.secaoAlu h1{
+    font-size: 38px;
+    margin-top: 0;
+    margin-bottom: 60px;
+}
 
 .campo-inserir {
     width: 100%;
