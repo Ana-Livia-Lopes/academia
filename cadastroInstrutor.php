@@ -22,8 +22,17 @@
             <label for="email">Email</label>
             <input class="campo-inserir" type="email" name="email" required>
 
-            <label for="especialidade">Especialidade</label>
-            <input class="campo-inserir" id="especialidadeInst" type="text" name="especialidade" required>
+            <label for="especialidade">Especialidade</label><br>
+            <select id="especialidadeInst" name="especialidade">
+                <option value="Pilates">Pilates</option>
+                <option value="Crossfit">Crossfit</option>
+                <option value="Musculação">Musculação</option>
+                <option value="Yoga">Yoga</option>
+                <option value="Aeróbica">Aeróbica</option>
+                <option value="Ginástica">Ginástica</option>
+                <option value="Alongamento">Alongamento</option>
+                <option value="Luta">Luta</option>
+            </select>
             
             <label for="senha">Senha</label>
             <input class="campo-inserir" id="senha-campo" type="password" name="senha" required>
