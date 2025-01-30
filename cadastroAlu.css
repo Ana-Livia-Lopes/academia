@@ -77,7 +77,7 @@
     width: 100%;
     max-width: 230px;
     margin-top: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -89,6 +89,13 @@
 }
 #botao-cadastrar{
     background-color: #f2a270;
+}
+#a{
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #botao-cadastrar a{
     text-decoration: none;
