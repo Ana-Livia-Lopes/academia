@@ -31,6 +31,8 @@
                         <th>Nome</th>
                         <th>CPF</th>
                         <th>Telefone</th>
+                        <th>editar</th>
+                        <th>excluir</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,6 +43,8 @@
                             echo "<td>" . $linha['aluno_nome'] . "</td>";
                             echo "<td>" . $linha['aluno_cpf'] . "</td>";
                             echo "<td>" . $linha['aluno_telefone'] . "</td>";
+                            echo "<td><button class='editar'>\</button></td>";
+                            echo "<td><button class='editar'>x</button></td>";
                             echo "<tr>";
                         }                   
                     }
