@@ -28,7 +28,7 @@
             </div>
             
             <button id="botao-cadastrar" type="submit">Entrar</button>
-            <a id="a" href="loginIns.php">você é um instrutor? clique aqui</a>
+            <a id="a" href="loginIns.php">Você é um instrutor? Clique aqui!</a>
         </form>
     </div>
 </section>

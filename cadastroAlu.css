@@ -96,6 +96,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
 }
 #botao-cadastrar a{
     text-decoration: none;
