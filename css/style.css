@@ -231,10 +231,7 @@ a{
 span.material-symbols-outlined {
     font-size: 65px;
 }
-#arco{
-    width: 55px;
-    filter: brightness(0) invert(1);
-} 
+
 .content {
     color: white;
 }

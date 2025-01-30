@@ -4,7 +4,7 @@
 <?php 
     include 'head.php';
 ?>
-    <title>Document</title>
+    <title>Power Gym</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <?php 
@@ -34,7 +34,7 @@
                 </div>
             </div>
 
-            <h2>Tipos de aulas disponiveis</h2>
+            <h2>Tipos de aulas disponíveis</h2>
 
             <div class="container" data-aos="fade" data-aos-duration="1000" data-aos-delay="200">
             <a href="aulas.php">
