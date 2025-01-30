@@ -120,6 +120,17 @@
 .celular{
     opacity: 0;
 }
+select{
+    width: 106%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 2px solid #ffffff;
+    font-size: 16px;
+    background-color: rgb(232, 240, 254);
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+}
 /* login */
 #secao-login {
     display: flex;
@@ -226,10 +237,35 @@
 #entrar:hover, #cadastrar-button:hover {
     background-color: #b25922;
 }
-
 @media (max-width: 768px){
-    .celular{
-        opacity: 1;
-        font-weight: 400;
+    body {
+        padding: 10px;
+    }
+    #secao-login, .secao-cadastro {
+        flex-direction: column;
+        width: 90%;
+        max-width: 100%;
+    }
+    #box-login, #box-welcome, .box-cadastro, .box-bemvindo {
+        width: 100%;
+        padding: 20px;
+        height: auto;
+    }
+    #box-login h1, .box-cadastro h1 {
+        font-size: 2rem;
+    }
+    #box-welcome h2, .box-bemvindo h2 {
+        font-size: 1.8rem;
+    }
+    #box-login p, .box-cadastro p, #box-welcome p, .box-bemvindo p {
+        font-size: 1rem;
+    }
+    #entrar, #cadastrar-button, #botao-cadastrar, #botao-entrar {
+        margin-right: 40px;
+        max-width: 90%;
+        margin-top: 20px;
+    }
+    #box-welcome, .box-bemvindo {
+        display: none;
     }
 }
