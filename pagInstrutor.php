@@ -1,4 +1,4 @@
-<i?php
+<?php
     include 'php/conexao.php';
 
     $sql_instrutores= "SELECT instrutor_nome, instrutor_especialidade FROM instrutores";
@@ -47,8 +47,8 @@
         </div>
     </div>
     <div id="botoes">
-        <a href="./cadastroAluno/"><button class="botaoCadastar">cadastrar aluno</button></a>
-        <a href="./cadastroInstrutor/"><button class="botaoCadastar">cadastrar instrutor</button></a>
+        <a href="./cadastroAluno.php"><button class="botaoCadastar">cadastrar aluno</button></a>
+        <a href="./cadastroInstrutor.php"><button class="botaoCadastar">cadastrar instrutor</button></a>
     </div>
 </body>
 </html>
