@@ -30,22 +30,22 @@ $aulas = $stmt->get_result();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editora Senai</title>
-    <link rel="stylesheet" href="css/aulas.css">
+    <title>Aulas Disponíveis</title>
+    <link rel="stylesheet" href="pagAluno.css">
     <?php include './head.php' ?>
 </head>
 <body>
     <?php include './header.php' ?>
     <div class="container">
     <h1>Aulas cadastrados</h1>
-    <div class="tabela-div"></div>
+    <div class="tabela-div">
     <table>
         <hr>
         <thead>
             <tr>
-                <th>modalidade</th>
-                <th>instrutor</th>
-                <th>data</th>
+                <th>Modalidade</th>
+                <th>Instrutor</th>
+                <th>Data</th>
             </tr>
         </thead>
         <tbody>

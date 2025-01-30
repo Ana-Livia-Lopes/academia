@@ -100,7 +100,7 @@
 
     <style>
         header {
-    background-color: rgb(98, 56, 0);
+    background-color: rgb(174, 106, 16);
     color:rgb(255, 255, 255);
     padding: 10px;
     text-align: center;
@@ -109,6 +109,7 @@
     z-index: 50;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     transition: all 0.4s ease;
+    width: 100%;
 }
 
 #header.ativo{
@@ -206,7 +207,7 @@ a{
 }
 
 a:hover{
-    color:rgb(171, 171, 171);
+    color:rgb(50, 50, 50);
 }
 
 

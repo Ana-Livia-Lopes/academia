@@ -17,9 +17,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <!-- <?php include 'header.php';?> -->
+    <?php 
+    include 'head.php';
+?>
     <link rel="stylesheet" href="pagAluno.css">
 </head>
+<?php include 'header.php';?>
 <body>
     <div class="container">
         <h1>Alunos cadastrados</h1>
@@ -30,6 +33,8 @@
                         <th>Nome</th>
                         <th>CPF</th>
                         <th>Telefone</th>
+                        <th>Editar</th>
+                        <th>Excluir</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,6 +45,8 @@
                             echo "<td>" . $linha['aluno_nome'] . "</td>";
                             echo "<td>" . $linha['aluno_cpf'] . "</td>";
                             echo "<td>" . $linha['aluno_telefone'] . "</td>";
+                            echo "<td><button class='editar'>\</button></td>";
+                            echo "<td><button class='editar'>x</button></td>";
                             echo "<tr>";
                         }                   
                     }
@@ -48,5 +55,6 @@
             </table>
         </div>
     </div>
+    <?php include 'footer.php';?>
 </body>
 </html>

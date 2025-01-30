@@ -1,4 +1,4 @@
-<i?php
+<?php
     include 'php/conexao.php';
 
     $sql_instrutores= "SELECT instrutor_nome, instrutor_especialidade FROM instrutores";
@@ -20,15 +20,20 @@
     <link rel="stylesheet" href="pagAluno.css">
 </head>
 <body>
+    <?php include 'header.php';?>
+    <?php 
+    include 'head.php';
+?>
     <div class="container">
         <h1>Instrutores cadastrados</h1>
-        <div class="tabela-div">
-        >
+        <div class="tabela-div divIns">
             <table>
                 <thead>
                     <tr>
                         <th>Nome</th>
                         <th>Especialidade</th>
+                        <th>Editar</th>
+                        <th>Excluir</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,6 +43,8 @@
                             echo "<tr>";
                             echo "<td>" . $linha['instrutor_nome'] . "</td>";
                             echo "<td>" . $linha['instrutor_especialidade'] . "</td>";
+                            echo "<td><button class='editar'>\</button></td>";
+                            echo "<td><button class='editar'>x</button></td>";
                             echo "<tr>";
                         }                   
                     }
@@ -47,8 +54,9 @@
         </div>
     </div>
     <div id="botoes">
-        <a href="./cadastroAluno/"><button class="botaoCadastar">cadastrar aluno</button></a>
-        <a href="./cadastroInstrutor/"><button class="botaoCadastar">cadastrar instrutor</button></a>
+        <a href="./cadastroAluno.php"><button class="botaoCadastar">Cadastrar aluno</button></a>
+        <a href="./cadastroInstrutor.php"><button class="botaoCadastar">Cadastrar instrutor</button></a>
     </div>
+    <?php include 'footer.php';?>
 </body>
 </html>
