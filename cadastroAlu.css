@@ -1,16 +1,18 @@
-
+/* cadastrar */
 .secao-cadastro {
     display: flex;
-    width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    width: 600px;
     background: #fff;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
-.box-cadastro, .box-bemvindo {
-    width: 50%;
-    height: 570px;
+.box-cadastro{
+    height: 520px;
     padding: 60px;
     display: flex;
     flex-direction: column;
@@ -24,38 +26,22 @@
 }
 
 .box-cadastro h1 {
-    font-size: 43.7px;
+    margin-top: 60px;
+    font-size: 34px;
     color: white;
     font-family: 'Montserrat', sans-serif;
-    margin-bottom: 30px;
     text-align: center;
 }
 
 .box-cadastro label {
     font-weight: bold;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 20px;
     text-align: left;
     color: white;
     margin: 10px 0 5px;
 }
 
-.box-bemvindo {
-    background-color: #313131;
-    color: white;
-}
-
-.box-bemvindo h2 {
-    color: #55a95e;
-    font-size: 38px;
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 12px;
-}
-
-.box-bemvindo p {
-    font-size: 22px;
-    margin-bottom: 20px;
-    text-align: center;
-}
 
 .campo-inserir {
     width: 100%;
@@ -69,8 +55,8 @@
     font-weight: 400;
 }
 
-#botao-cadastrar, #botao-entrar {
-    background-color: #5c9f63;
+#botao-cadastrar {
+    background-color: #d66e2d;
     color: white;
     border: none;
     border-radius: 20px;
@@ -90,12 +76,15 @@
     font-size: 24px;
     font-family: 'Montserrat', sans-serif;
 }
-#botao-cadastrar a, #botao-entrar a{
+#botao-cadastrar{
+    background-color: #f2a270;
+}
+#botao-cadastrar a{
     text-decoration: none;
     color: white;
 }
-#botao-cadastrar:hover, #botao-entrar:hover {
-    background-color: #438e4b;
+#botao-cadastrar:hover{
+    background-color: #c8682d;
 }
 .box-cadastro p{
     text-align: center;
@@ -106,12 +95,6 @@
 .box-cadastro a:hover{
     color: white;
 }
-.celular{
-    opacity: 0;
-}
-@media (max-width: 768px){
-    .celular{
-        opacity: 1;
-        font-weight: 400;
-    }
+#mostrar{
+    font-family: 'Montserrat', sans-serif;
 }

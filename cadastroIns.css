@@ -1,0 +1,235 @@
+/* cadastrar */
+.secao-cadastro {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    width: 1000px;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.box-cadastro, .box-bemvindo {
+    width: 50%;
+    height: 500px;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-cadastro {
+    background-color: #d66e2d;
+    color: white;
+}
+
+.box-cadastro h1 {
+    font-size: 39px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.box-cadastro label {
+    font-weight: bold;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 20px;
+    text-align: left;
+    color: white;
+    margin: 10px 0 5px;
+}
+
+.box-bemvindo {
+    background-color: #313131;
+    color: white;
+}
+
+.box-bemvindo h2 {
+    color: #d66e2d;
+    font-size: 38px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 12px;
+}
+
+.box-bemvindo p {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.campo-inserir {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 2px solid #fffafa;
+    font-size: 16px;
+    background-color: #ffffff00;
+    color: white;
+    font-weight: 400;
+}
+
+#botao-cadastrar, #botao-entrar {
+    background-color: #d66e2d;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 14px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 230px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+}
+#botao-cadastrar{
+    background-color: #f2a270;
+}
+#botao-cadastrar a, #botao-entrar a{
+    text-decoration: none;
+    color: white;
+}
+#botao-cadastrar:hover, #botao-entrar:hover{
+    background-color: #c8682d;
+}
+.box-cadastro p{
+    text-align: center;
+}
+.box-cadastro a{
+    color: #313131;
+}
+.box-cadastro a:hover{
+    color: white;
+}
+#mostrar{
+    font-family: 'Montserrat', sans-serif;
+}
+.celular{
+    opacity: 0;
+}
+/* login */
+#secao-login {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    width: 1000px;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+#box-login, #box-welcome {
+    width: 50%;
+    height: 500px;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#box-login {
+    background-color: #313131;
+    color: white;
+}
+#box-login h1 {
+    font-size: 38.7px;
+    color: #d66e2d;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 40px;
+}
+#box-login p{
+    text-align: center;
+    margin-top: 8px;
+    font-size: 18px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: white;
+}
+#box-welcome {
+    background-color: #d66e2d;
+    color: white;
+}
+#box-welcome h2 {
+    font-size: 34.8px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 50px;
+    margin-bottom: 12px;
+}
+#box-welcome p {
+    font-size: 22px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin-bottom: 20px;
+    text-align: center;
+}
+#box-login label {
+    font-weight: bold;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 20px;
+    text-align: left;
+    color: white;
+    margin: 10px 0 5px;
+}
+.inserir {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 2px solid #a3a2a2;
+    font-size: 16px;
+    background-color: #ffffff00;
+    color: white;
+}
+#entrar, #cadastrar-button {
+    background-color: #d66e2d;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 14px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 230px;
+    margin-top: 40px;
+    margin-bottom: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+}
+#cadastrar-button{
+    background-color: #f2a270;
+}
+
+#entrar a, #box-welcome a{
+    text-decoration: none;
+    color: white;
+}
+#entrar:hover, #cadastrar-button:hover {
+    background-color: #b25922;
+}
+
+@media (max-width: 768px){
+    .celular{
+        opacity: 1;
+        font-weight: 400;
+    }
+}
