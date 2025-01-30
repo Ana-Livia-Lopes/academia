@@ -1,5 +1,5 @@
 <?php
-include 'conexao.php';
+include 'php/conexao.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $var_nome = $_POST["nome"];
@@ -24,7 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $conexao->close();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -33,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel="shortcut icon" href="./img/HW-icon.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="cadastro.css">
+    <link rel="stylesheet" href="cadastroIns.css">
     <title>Cadastrar Instrutor - Power Gym</title>
 </head>
 <body>
@@ -61,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <div class="box-bemvindo">
         <h2>Já tem uma conta?</h2>
         <p>Para continuar sua jornada conosco, entre com suas credenciais.</p>
-        <button id="botao-entrar" onclick="window.location='login.php'"><a href="./login.php">Entrar</a></button>
+        <button id="botao-entrar" onclick="window.location='loginIns.php'"><a href="./loginIns.php">Entrar</a></button>
     </div>
 </section>
 <script>

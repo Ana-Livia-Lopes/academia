@@ -1,5 +1,5 @@
 <?php
-include 'conexao.php';
+include 'php/conexao.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $var_nome = $_POST["nome"];
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel="shortcut icon" href="./img/HW-icon.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="cadastroAlu.css">
     <title>Cadastrar aluno - Power Gym</title>
 </head>
 <body>
@@ -41,12 +41,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     <div class="box-cadastro">
         <form action="" method="POST">
-            <h1>Cadastro</h1>
+            <h1>Cadastre um aluno</h1>
             <label for="nome">Nome</label>
             <input class="campo-inserir" type="text" name="nome" required>
             
-            <label for="email">Email</label>
-            <input class="campo-inserir" type="email" name="email" required>
+            <label for="cpf">CPF</label>
+            <input class="campo-inserir" type="text" name="cpf" required>
+
+            <label for="end_aluno">Endereço</label>
+            <input class="campo-inserir" type="text" name="end_aluno" required>
+
+            <label for="tel_aluno">Telefone</label>
+            <input class="campo-inserir" type="tel" name="tel_aluno" required>
             
             <label for="senha">Senha</label>
             <input class="campo-inserir" id="senha-campo" type="password" name="senha" required>
@@ -55,13 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
             
             <button id="botao-cadastrar" type="submit" onclick="window.location='index.php'">Cadastrar</button>
-            <p class="celular">Já tem uma conta? <a href="./login.php" id="entre">Entre!</a></p>
         </form>
-    </div>
-    <div class="box-bemvindo">
-        <h2>Já tem uma conta?</h2>
-        <p>Para continuar sua jornada conosco, entre com suas credenciais.</p>
-        <button id="botao-entrar" onclick="window.location='login.php'"><a href="./login.php">Entrar</a></button>
     </div>
 </section>
 <script>
