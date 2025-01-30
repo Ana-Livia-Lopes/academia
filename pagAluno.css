@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    margin-top: 4%;
+}
+.container h1{
+    color: #d66e2d;
+    text-align: center;
+    font-size: 50px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+}
+.tabela-div{
+    border: #d66e2d solid 5px;
+    border-radius: 10px;
+    margin-top: 20px;
+
+}
+th, tr{
+    padding: 20px;
+}
+
+table{
+    padding: 10px;
+    border-radius: 10px;
+}
+td, th{
+    border: #d66e2d solid 2px;
+    border-radius: 4px;
+    padding: 10px;
+}
+th{
+    font-size: 18px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    color: #d66e2d;
+}
+td{
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+}

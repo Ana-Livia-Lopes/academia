@@ -22,6 +22,9 @@
             <label for="cpf">CPF</label>
             <input class="campo-inserir" type="text" name="cpf" required>
 
+            <label for="email">Email</label>
+            <input class="campo-inserir" type="email" name="email" required>
+
             <label for="end_aluno">Endereço</label>
             <input class="campo-inserir" type="text" name="end_aluno" required>
 

@@ -7,7 +7,7 @@
                     <li><h3><a href="./aluno.php">Aluno</a></h3></li>
                     <li><h3><a href="./instrutor.php">Instrutor</a></h3></li>
                     <li><h3><a href="./aulas.php">Aulas</a></h3></li>
-                    <li><h3><a href="./login.php">Entrar</a></h3></li>
+                    <li><h3><a href="./loginalu.php">Entrar</a></h3></li>
 
                 </ul>
                 <div id="user-div">
