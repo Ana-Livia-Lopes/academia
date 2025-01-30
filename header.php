@@ -7,7 +7,7 @@
                     <li><h3><a href="./pagAluno.php">Aluno</a></h3></li>
                     <li><h3><a href="./pagInstrutor.php">Instrutor</a></h3></li>
                     <li><h3><a href="./aulas.php">Aulas</a></h3></li>
-                    <li><h3><a href="./login.php">Entrar</a></h3></li>
+                    <li><h3><a href="./loginAlu.php">Entrar</a></h3></li>
 
                 </ul>
                 <div id="user-div">
@@ -28,7 +28,7 @@
                     <li><h3><a href="/pagAluno.php">Aluno</a></h3></li>
                     <li><h3><a href="./pagInstrutor.php">Instrutor</a></h3></li>
                     <li><h3><a href="./aulas.php">Aulas</a></h3></li>
-                    <li><h3><a href="./login.php">Entrar</a></h3></li>
+                    <li><h3><a href="./loginAlu.php">Entrar</a></h3></li>
                 </ul>
             </nav>
         </div>

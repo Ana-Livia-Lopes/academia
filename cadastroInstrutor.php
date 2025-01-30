@@ -32,7 +32,7 @@
             </div>
             
             <button id="botao-cadastrar" type="submit">Cadastrar</button>
-            <p class="celular">Já tem uma conta? <a href="./login.php" id="entre">Entre!</a></p>
+            <p class="celular">Já tem uma conta? <a href="./loginIns.php" id="entre">Entre!</a></p>
         </form>
     </div>
     <div class="box-bemvindo">
