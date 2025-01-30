@@ -171,3 +171,23 @@ async function logout() {
         }
     });
 }
+
+async function estaLogado() {
+    return JSON.parse((await (fetch("./php/checkLogin.php")).then(resp => resp.text())));
+}
+
+async function bloquearNaoLogado(callback) {
+    if (await estaLogado()) {
+        callback();
+    } else {
+        Swal.fire({
+            icon: "error",
+            title: "Sessão necessária",
+            text: "Inicie uma sessão para acessar esta área"
+        });
+    }
+}
+
+async function checkNivel() {
+    return (await (fetch("./php/checkNivel.php")).then(resp => resp.text()));
+}
