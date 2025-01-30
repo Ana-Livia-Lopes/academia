@@ -26,6 +26,7 @@
                 <input type='checkbox' onclick='mostrarSenha()'> Mostrar senha
             </div>
             
+            <a href="loginins.php"><p>é um instrutor? clique aqui</p></a>
             <button id="botao-cadastrar" type="submit" onclick="window.location='index.php'">Cadastrar</button>
             <?php
 
