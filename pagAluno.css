@@ -7,6 +7,9 @@ body{
     align-items: center;
     flex-direction: column;
 }
+html {
+    background-color: rgb(207, 207, 207);
+}
 .container{
     margin-top: 4%;
 }
@@ -21,10 +24,24 @@ body{
     border: #d66e2d solid 5px;
     border-radius: 10px;
     margin-top: 20px;
+    background-color: white;
 
 }
 th, tr{
     padding: 20px;
+}
+.editar{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffe0ce;
+    border: solid 1px #ad7649;
+    cursor: pointer;
+
 }
 
 table{
