@@ -27,7 +27,7 @@
                 <input type='checkbox' onclick='mostrarSenha()'> Mostrar senha
             </div>
             
-            <button id="botao-cadastrar" type="submit">Cadastrar</button>
+            <button id="botao-cadastrar" type="submit">Entrar</button>
             
         </form>
     </div>
