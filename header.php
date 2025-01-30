@@ -4,14 +4,8 @@
             <nav>
                 <ul id="nav1">
                     <li><h3><a id="inicio" href="./index.php">início</a></h3></li>
-<<<<<<< HEAD
-                    <li><h3><a href="./pagAluno.php">Aluno</a></h3></li>
-                    <li><h3><a href="./pagInstrutor.php">Instrutor</a></h3></li>
-                    <li><h3><a href="./aulas.php">Aulas</a></h3></li>
-                    <li><h3><a href="./loginAlu.php">Entrar</a></h3></li>
-=======
-                    <li><h3><a href="./aluno.php" class="blockNAluno">Aluno</a></h3></li>
-                    <li><h3><a href="./instrutor.php" class="blockNInstrutor">Instrutor</a></h3></li>
+                    <li><h3><a href="./pagAluno.php" class="blockNAluno">Aluno</a></h3></li>
+                    <li><h3><a href="./pagInstrutor.php" class="blockNInstrutor">Instrutor</a></h3></li>
                     <li><h3><a href="./aulas.php" class="blockNLogin">Aulas</a></h3></li>
                     <li><h3><a href="./loginalu.php" id="botao-entrar">Entrar</a></h3></li>
                     <script>
@@ -77,7 +71,6 @@
                             });
                         });
                     </script>
->>>>>>> 0124634f8842acd0624fb2eba9823035f6fa1aa5
 
                 </ul>
                 <div id="user-div">
