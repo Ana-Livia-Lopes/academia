@@ -64,6 +64,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
             
             <button id="botao-cadastrar" type="submit" onclick="window.location='index.php'">Cadastrar</button>
+
+            
         </form>
     </div>
 </section>

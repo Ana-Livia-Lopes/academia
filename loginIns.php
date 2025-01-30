@@ -12,7 +12,7 @@
 <body>
     <section id="secao-login">
         <div id="box-login">
-        <form action="" method="POST">
+        <form action="" method="POST" id="form-login-instrutor">
             <h1>Entre na sua conta</h1>
                     <label for="email">Email</label>
                     <input class="inserir" type="email" name="email" required>
