@@ -1,21 +1,24 @@
 <?php
-    $dbname = 'db_editora';
-    $hostname = 'localhost';
-    $password = '';
-    $username = 'root';
+session_start();
 
-    $conexao = new mysqli($hostname, $username,$password, $dbname);
+if (!isset($_SESSION['nivel'])) {
+    header("Location: index.php");
+}
+$nivel = $_SESSION['nivel'];
+if ($nivel !== "aluno") {   
+    header("Location: index.php");
+}
 
-    if ($conexao->connect_error) {
-        die("falha na coneção: ". $conexao->connect_error);
-    };
+include './php/conexao.php';
 
-    $sql_autores = "SELECT autores.nome_autor, livros.titulo_livro, livros.ano_livro, livros.genero_livro 
-    FROM livros
-    INNER JOIN autores ON livros.fk_id_autor = autores.id_autor
-    ORDER BY livros.titulo_livro DESC";
-    
-    $resultado_autores = $conexao -> query($sql_autores);
+$sql = "SELECT a.aula_tipo, a.aula_data, i.instrutor_nome FROM aulas a
+LEFT JOIN instrutores i ON a.fk_instrutor_cod = i.instrutor_cod
+WHERE a.fk_aluno_cod = ?";
+$stmt = $conexao->prepare($sql);
+$stmt->bind_param("i", $_SESSION['id']);
+$stmt->execute();
+
+$aulas = $stmt->get_result();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +27,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editora Senai</title>
     <link rel="stylesheet" href="css/aulas.css">
+    <?php include './head.php' ?>
 </head>
 <body>
     <div class="container">
@@ -41,9 +45,9 @@
         </thead>
         <tbody>
             <?php
-            if ($resultado_autores->num_rows >0 ){
-                while($linha = $resultado_autores->fetch_assoc()){
-                echo"<tr><td>".$linha['nome_autor']."</td><td>".$linha['titulo_livro']."</td><td>".$linha['ano_livro']."</td><td>".$linha['genero_livro']."</td></tr>";
+            if ($aulas->num_rows >0 ){
+                while($linha = $aulas->fetch_assoc()){
+                echo"<tr><td>"."a"."</td><td>".$linha['aula_tipo']."</td><td>".$linha['instrutor_nome']."</td><td>".$linha['aula_data']."</td></tr>";
                 }
             }
             
