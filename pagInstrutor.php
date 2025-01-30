@@ -23,14 +23,14 @@
     <?php include 'header.php';?>
     <div class="container">
         <h1>Instrutores cadastrados</h1>
-        <div class="tabela-div">
+        <div class="tabela-div divIns">
             <table>
                 <thead>
                     <tr>
                         <th>Nome</th>
                         <th>Especialidade</th>
-                        <th>editar</th>
-                        <th>excluir</th>
+                        <th>Editar</th>
+                        <th>Excluir</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -51,8 +51,8 @@
         </div>
     </div>
     <div id="botoes">
-        <a href="./cadastroAluno.php"><button class="botaoCadastar">cadastrar aluno</button></a>
-        <a href="./cadastroInstrutor.php"><button class="botaoCadastar">cadastrar instrutor</button></a>
+        <a href="./cadastroAluno.php"><button class="botaoCadastar">Cadastrar aluno</button></a>
+        <a href="./cadastroInstrutor.php"><button class="botaoCadastar">Cadastrar instrutor</button></a>
     </div>
     <?php include 'footer.php';?>
 </body>

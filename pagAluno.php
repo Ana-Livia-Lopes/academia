@@ -31,8 +31,8 @@
                         <th>Nome</th>
                         <th>CPF</th>
                         <th>Telefone</th>
-                        <th>editar</th>
-                        <th>excluir</th>
+                        <th>Editar</th>
+                        <th>Excluir</th>
                     </tr>
                 </thead>
                 <tbody>
