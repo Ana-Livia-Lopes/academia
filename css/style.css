@@ -1,0 +1,320 @@
+/* pagina */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+html {
+    background-color: rgb(207, 207, 207);
+}
+body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+/* fim pagina */
+/* seção 1 */
+#secao1{
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: url('../img/academia.jpg')
+    no-repeat center center;
+    background-size: cover;
+    display: flow-root;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+
+#secao1 h1{
+    color: rgb(255, 255, 255);
+    font-size: 100px; 
+    text-shadow:
+    2px 2px 1px #000,
+    -2px 2px 1px #000,
+    -2px -2px 0 #000,
+    2px -2px 0 #000;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    margin-top: 120px;
+    display: flex;          
+    justify-content: center;
+    align-items: center;   
+}
+#folha{
+    width: 90px;
+    border-top-left-radius: 40px;
+    margin-left: 5px;
+    
+}
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+#secao1 {
+  text-align:center;
+  color: rgb(253, 250, 238);
+  font-weight:500;
+  font-size:29px;
+  padding-top:2em;
+  height:83vh;
+  overflow:hidden;
+}
+
+.div {
+    font-family: 'Montserrat', sans-serif;
+    display:inline-block;
+    overflow:hidden;
+    white-space:nowrap;
+    text-shadow:
+    1px 1px 0px #000,
+    -1px 1px 0px #000,
+    -1px -1px 0 #000,
+    1px -1px 0 #000;
+    color: white;
+}
+
+.div:first-of-type, #secao1 h1:first-of-type{    
+    animation: showup 12s forwards;
+}
+
+.div:last-of-type {
+    width:0px;
+    animation: reveal 8s forwards;
+}
+
+.div:last-of-type span {
+    animation: slidein 8s forwards;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@keyframes showup {
+    0% {opacity:0;}
+    20% {opacity:1;}
+
+}
+
+@keyframes slidein {
+    0% { margin-left:-800px; }
+    20% { margin-left:-800px; }
+    35% { margin-left:-30px; }
+    100% { margin-left:-30px; }
+}
+
+@keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:235px;}
+
+    100% {opacity:1;width:235px;}
+}
+
+/* fim seção 1 */
+/* secão 2 */
+
+/* sobre */
+#secao2{
+    margin-top: 90px;
+}
+.imgSobre {
+    background: url('../img/sobre.jpg') no-repeat center center;
+    background-size: cover;
+    height: 600px;
+    width: 1100px;
+    position: relative;
+    border-radius: 20px;
+    margin: 4px auto;
+    max-width: 90%;
+}
+
+.sobre {
+    margin-top: 50px;
+    position: absolute;
+    top: 7%;
+    right: 50px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    width: 500px;
+    height: 420px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    max-width: 70%;
+}
+
+.sobre h1 {
+    color:rgb(47, 22, 22);
+    font-size: 65px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sobre p {
+    margin-top: 20px;
+    font-size: 30px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    text-align: justify;
+}
+/* fim sobre */
+/* cards */
+h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    margin-top: 40px;
+}
+.container{
+    width: 80%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0px 10%;
+    flex-wrap: wrap;
+}
+.container .card p{
+    text-align: justify;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 15px;
+}
+.container2{
+    width: 80%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 10px 10%;
+    flex-wrap: wrap;
+}
+.container2 .card p{
+    text-align: justify;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 15px;
+}
+.quadrado{
+    width: 210px;
+    height: 180px;
+    transition: 0.5s;
+}
+.card{
+    width: 210px;
+    height: 280px;
+}
+.q1{
+    position: relative;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(90px);
+}
+.card:hover .q1{
+    background: #d66e2d;
+    transform: translateY(0);
+}
+.q2{
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.511);
+    transform: translateY(-90px);
+}
+.card:hover .q2{
+    transform: translateY(0);
+}
+.fa-solid {
+    font-size: 50px;
+}  
+.card{
+    text-align: center;
+
+}
+span.material-symbols-outlined {
+    font-size: 65px;
+}
+#arco{
+    width: 55px;
+    filter: brightness(0) invert(1);
+} 
+.content {
+    color: white;
+}
+.content h3{
+    margin-top: 20px;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
+}
+.content h4{
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+/* fim cards */
+@media (max-width: 768px){
+    body{
+        margin-left: 0;
+    }
+    .sobre {
+        width: 300px;
+        height: 370px;
+        min-width: 45px;
+        right: 30px;
+    }
+    .sobre h1 {
+        font-size: 40px;
+    }
+    .sobre p {
+        font-size: 18px;
+    }
+    .imgSobre {
+        height: 500px;
+        width: 1100px;
+        position: relative;
+        min-width: 60px;
+    }
+    #secao1 h1{
+        font-size: 50px;
+        margin-top: 50%;
+        text-shadow: 2px 4px 5px black,
+    -1.4px -1.4px 0 black,  
+    1.4px -1.4px 0 black,
+    -1.4px 1.4px 0 black,
+    1.4px 1.4px 0 black;
+    }
+    
+    .div{
+        font-size: 17px;
+    }
+    @keyframes slidein {
+        0% { margin-left:-800px; }
+        20% { margin-left:-800px; }
+        35% { margin-left:-0px; }
+        100% { margin-left:-0px; }
+    }
+    @keyframes reveal {
+        0% {opacity:0;width:0px;}
+        20% {opacity:1;width:0px;}
+        30% {width:167px;}
+    
+        100% {opacity:1;width:167px;}
+    }
+    .pc{
+        display: none;
+    }
+    .cel{
+        display: block;
+   
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center;
+    }
+    
+    #pc{
+        display: none
+    }
+}
+.cel{
+    display: none;
+}
