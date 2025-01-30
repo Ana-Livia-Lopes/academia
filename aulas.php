@@ -35,6 +35,7 @@ $aulas = $stmt->get_result();
     <?php include './head.php' ?>
 </head>
 <body>
+    <?php include './header.php' ?>
     <div class="container">
     <h1>Aulas cadastrados</h1>
     <div class="tabela-div"></div>
@@ -59,5 +60,6 @@ $aulas = $stmt->get_result();
         </tbody>
     </table>  
     </div>  
+    <?php include './footer.php' ?>
 </body>
 </html>

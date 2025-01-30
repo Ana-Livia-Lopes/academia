@@ -1,29 +1,3 @@
-<?php
-include 'php/conexao.php';
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $var_nome = $_POST["nome"];
-    $var_especialidade = $_POST["especialidade"];
-    $var_senha = $_POST["senha"];
-
-    $senha_hashed = password_hash($var_senha, PASSWORD_DEFAULT);
-
-    $sql_insercao = "INSERT INTO usuarios (instrutor_nome, instrutor_especialidade, instrutor_senha) VALUES (?, ?, ?)";
-    
-    $stmt = $conexao->prepare($sql_insercao);
-    
-    $stmt->bind_param("sss", $var_nome, $var_especialidade, $senha_hashed);
-    
-    if ($stmt->execute()) {
-        header("Location: index.php?cad=1");
-    } else {
-        echo "Erro ao cadastrar usuário: " . $conexao->error;
-    }
-
-    $stmt->close();
-    $conexao->close();
-}
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -33,13 +7,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="cadastroIns.css">
+    <?php include './head.php' ?>
     <title>Cadastrar Instrutor - Power Gym</title>
 </head>
 <body>
 <section class="secao-cadastro">
     
     <div class="box-cadastro">
-        <form action="" method="POST">
+        <form action="" method="POST" id="form-cadastro-instrutor">
             <h1>Cadastro Instrutor</h1>
             <label for="nome">Nome</label>
             <input class="campo-inserir" type="text" name="nome" required>
@@ -56,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <input type='checkbox' onclick='mostrarSenha()'> Mostrar senha
             </div>
             
-            <button id="botao-cadastrar" type="submit" onclick="window.location='index.php'">Cadastrar</button>
+            <button id="botao-cadastrar" type="submit">Cadastrar</button>
             <p class="celular">Já tem uma conta? <a href="./login.php" id="entre">Entre!</a></p>
         </form>
     </div>

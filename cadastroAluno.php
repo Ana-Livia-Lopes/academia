@@ -1,30 +1,3 @@
-<?php
-include 'php/conexao.php';
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $var_nome = $_POST["nome"];
-    $var_email = $_POST["email"];
-    $var_senha = $_POST["senha"];
-
-    $senha_hashed = password_hash($var_senha, PASSWORD_DEFAULT);
-
-    $sql_insercao = "INSERT INTO usuarios (nome_usuario, email_usuario, senha_usuario, imagem_usuario, tipo_usuario) VALUES (?, ?, ?, 'user_default.jpg', 'aluno')";
-    
-    $stmt = $conexao->prepare($sql_insercao);
-    
-    $stmt->bind_param("sss", $var_nome, $var_email, $senha_hashed);
-    
-    if ($stmt->execute()) {
-        header("Location: index.php?cad=1");
-    } else {
-        echo "Erro ao cadastrar usuário: " . $conexao->error;
-    }
-
-    $stmt->close();
-    $conexao->close();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -34,13 +7,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="cadastroAlu.css">
+    <?php include './head.php' ?>
     <title>Cadastrar aluno - Power Gym</title>
 </head>
 <body>
 <section class="secao-cadastro">
     
     <div class="box-cadastro">
-        <form action="" method="POST">
+        <form action="" method="POST" id="form-cadastro-aluno">
             <h1>Cadastre um aluno</h1>
             <label for="nome">Nome</label>
             <input class="campo-inserir" type="text" name="nome" required>
@@ -52,10 +26,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <input class="campo-inserir" type="email" name="email" required>
 
             <label for="end_aluno">Endereço</label>
-            <input class="campo-inserir" type="text" name="end_aluno" required>
+            <input class="campo-inserir" type="text" name="endereco" required>
 
             <label for="tel_aluno">Telefone</label>
-            <input class="campo-inserir" type="tel" name="tel_aluno" required>
+            <input class="campo-inserir" type="tel" name="telefone" required>
             
             <label for="senha">Senha</label>
             <input class="campo-inserir" id="senha-campo" type="password" name="senha" required>
@@ -63,9 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <input type='checkbox' onclick='mostrarSenha()'> Mostrar senha
             </div>
             
-            <button id="botao-cadastrar" type="submit" onclick="window.location='index.php'">Cadastrar</button>
-
-            
+            <button id="botao-cadastrar" type="submit">Cadastrar</button>
         </form>
     </div>
 </section>
