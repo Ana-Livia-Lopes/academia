@@ -61,7 +61,11 @@
     margin-bottom: 20px;
     text-align: center;
 }
-
+#especialidadeInst{
+    background-color: #f2a270;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
 .campo-inserir {
     width: 100%;
     padding: 10px;
