@@ -39,124 +39,128 @@
         <div class="card">
             <div class="quadrado q1">
                 <div class="content">
-                <img src="./img/arco.png" id="arco">
+                <span class="material-symbols-outlined">exercise</span>
                     <h3>Pilates</h3>
                 </div>
             </div>
             <div class="quadrado q2">
                 <div class="content2">
-                    <p>Foi a época compreendida entre o aparecimento do homem sobre a Terra e o uso da escrita</p>
+                    <p> Focado no fortalecimento do core, equilíbrio e flexibilidade, o Pilates melhora a postura e alivia dores musculares com exercícios controlados e de baixo impacto.</p>
                 </div>
             </div>
         </div>
-
+        <a href="">
 
         <div class="card">
             <div class="quadrado q1">
                 <div class="content">
-                <i class="fa-solid fa-landmark"></i>
+                <span class="material-symbols-outlined">exercise</span>
                     <h3>Crossfit</h3>
                 </div>
             </div>
             <div class="quadrado q2">
                 <div class="content2">
-                    <p>Época histórica marcada pelo surgimento e desenvolvimento das primeiras civilizações</p>
+                    <p>Um treino intenso que combina força, resistência e condicionamento, desafiando os limites do corpo com circuitos dinâmicos e variados.</p>
                 </div>
             </div>
         </div>
-
+        </a>
+        <a href="">
 
         <div class="card">
             <div class="quadrado q1">
                 <div class="content">
-                <i class="fa-solid fa-house"></i>
+                <span class="material-symbols-outlined">exercise</span>
                     <h3>Musculação</h3>
                 </div>
             </div>
             <div class="quadrado q2">
                 <div class="content2">
-                    <p>Período que ficou marcado pelo feudalismo, pela influência da Igreja, e pelas Cruzadas e Inquisição</p>
+                    <p> Ideal para ganho de força, definição muscular e saúde óssea, a musculação utiliza pesos e máquinas para treinos personalizados.</p>
                 </div>
             </div>
         </div>
-
+        </a>
+        <a href="">
         <div class="card">
             <div class="quadrado q1">
                 <div class="content">
-                <i class="fa-solid fa-sailboat"></i>
+                <span class="material-symbols-outlined">exercise</span>
                     <h3>Yoga</h3>
                 </div>
             </div>
             <div class="quadrado q2">
                 <div class="content2">
-                    <p>Fase de transição do feudalismo ao capitalismo que se iniciou com o desenvolvimento do comércio por meio do mercantilismo</p>
+                    <p>Une corpo e mente com posturas, respiração e meditação, promovendo relaxamento, flexibilidade e equilíbrio emocional.</p>
                 </div>
             </div>
         </div>
-
+        </a>
         
         
     </div>
     <div class="container" data-aos="fade" data-aos-duration="1000" data-aos-delay="200">
-
+        <a href="">
     <div class="card">
             <div class="quadrado q1">
                 <div class="content">
-                <i class="fa-solid fa-building"></i>
+                <span class="material-symbols-outlined">exercise</span>
                     <h3>Aeróbica</h3>
                 </div>
             </div>
             <div class="quadrado q2">
                 <div class="content2">
-                    <p>Período histórico que começou na Revolução Francesa e se estende até os dias de hoje.</p>
+                    <p>Com movimentos ritmados e energéticos, melhora o condicionamento físico, fortalece o coração e queima calorias de forma divertida.</p>
                 </div>
             </div>
         </div>
-
+        </a>
+        <a href="">
         <div class="card">
             <div class="quadrado q1">
                 <div class="content">
-                <img src="./img/arco.png" id="arco">
+                <span class="material-symbols-outlined">exercise</span>
                     <h3>Ginástica</h3>
                 </div>
             </div>
             <div class="quadrado q2">
                 <div class="content2">
-                    <p>Foi a época compreendida entre o aparecimento do homem sobre a Terra e o uso da escrita</p>
+                    <p>Trabalha coordenação, resistência e força com exercícios variados, sendo ideal para quem busca disposição e um corpo ativo.</p>
                 </div>
             </div>
         </div>
 
-
+        </a>
+        <a href="">
         <div class="card">
             <div class="quadrado q1">
                 <div class="content">
-                <i class="fa-solid fa-landmark"></i>
+                <span class="material-symbols-outlined">exercise</span>
                     <h3>Alongamento</h3>
                 </div>
             </div>
             <div class="quadrado q2">
                 <div class="content2">
-                    <p>Época histórica marcada pelo surgimento e desenvolvimento das primeiras civilizações</p>
+                    <p>Essencial para manter a flexibilidade e evitar lesões, ajuda a relaxar os músculos e melhorar a mobilidade do corpo.</p>
                 </div>
             </div>
         </div>
-
-
+        </a>
+        <a href="">
         <div class="card">
             <div class="quadrado q1">
                 <div class="content">
-                <i class="fa-solid fa-house"></i>
+                <span class="material-symbols-outlined">exercise</span>
                     <h3>Luta</h3>
                 </div>
             </div>
             <div class="quadrado q2">
                 <div class="content2">
-                    <p>Período que ficou marcado pelo feudalismo, pela influência da Igreja, e pelas Cruzadas e Inquisição</p>
+                    <p>Modalidades como boxe e muay thai aumentam a resistência, força e agilidade, além de proporcionarem disciplina e autoconfiança.</p>
                 </div>
             </div>
         </div>
-
+        </a>
         
     </div>
 
