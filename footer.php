@@ -17,7 +17,7 @@ footer {
     background-color: rgb(255, 255, 255);
     width: 100%;
     color: black;
-    margin-top: 100px;
+    margin-top: 220px;
 }
 
 .contato {

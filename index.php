@@ -37,6 +37,7 @@
             <h2>Tipos de aulas disponiveis</h2>
 
             <div class="container" data-aos="fade" data-aos-duration="1000" data-aos-delay="200">
+            <a href="aulas.php">
         <div class="card">
             <div class="quadrado q1">
                 <div class="content">
@@ -50,6 +51,7 @@
                 </div>
             </div>
         </div>
+        </a>
         <a href="">
 
         <div class="card">
