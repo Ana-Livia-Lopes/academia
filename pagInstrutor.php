@@ -21,6 +21,9 @@
 </head>
 <body>
     <?php include 'header.php';?>
+    <?php 
+    include 'head.php';
+?>
     <div class="container">
         <h1>Instrutores cadastrados</h1>
         <div class="tabela-div divIns">

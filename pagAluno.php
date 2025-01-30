@@ -17,7 +17,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <!-- <?php include 'header.php';?> -->
+    <?php 
+    include 'head.php';
+?>
     <link rel="stylesheet" href="pagAluno.css">
 </head>
 <?php include 'header.php';?>
