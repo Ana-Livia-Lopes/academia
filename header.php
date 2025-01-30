@@ -7,14 +7,18 @@
                     <li><h3><a href="./aluno.php" class="blockNAluno">Aluno</a></h3></li>
                     <li><h3><a href="./instrutor.php" class="blockNInstrutor">Instrutor</a></h3></li>
                     <li><h3><a href="./aulas.php" class="blockNLogin">Aulas</a></h3></li>
-                    <li id="botao-entrar"><h3><a href="./loginalu.php">Entrar</a></h3></li>
+                    <li><h3><a href="./loginalu.php" id="botao-entrar">Entrar</a></h3></li>
                     <script>
                         const botaoEntrar = document.getElementById("botao-entrar");
                         (async function() {
                             const check = await estaLogado();
 
                             if (check) {
-                                botaoEntrar.parentElement.removeChild(botaoEntrar);
+                                botaoEntrar.removeAttribute("href");
+                                botaoEntrar.addEventListener("click", () => {
+                                    logout();
+                                });
+                                botaoEntrar.innerHTML = "Sair";
                             }
                         })()
 
