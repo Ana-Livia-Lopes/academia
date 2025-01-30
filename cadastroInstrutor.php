@@ -1,29 +1,3 @@
-<?php
-include 'php/conexao.php';
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $var_nome = $_POST["nome"];
-    $var_especialidade = $_POST["especialidade"];
-    $var_senha = $_POST["senha"];
-
-    $senha_hashed = password_hash($var_senha, PASSWORD_DEFAULT);
-
-    $sql_insercao = "INSERT INTO usuarios (instrutor_nome, instrutor_especialidade, instrutor_senha) VALUES (?, ?, ?)";
-    
-    $stmt = $conexao->prepare($sql_insercao);
-    
-    $stmt->bind_param("sss", $var_nome, $var_especialidade, $senha_hashed);
-    
-    if ($stmt->execute()) {
-        header("Location: index.php?cad=1");
-    } else {
-        echo "Erro ao cadastrar usuário: " . $conexao->error;
-    }
-
-    $stmt->close();
-    $conexao->close();
-}
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -39,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <section class="secao-cadastro">
     
     <div class="box-cadastro">
-        <form action="" method="POST">
+        <form action="" method="POST" id="form-cadastro-instrutor">
             <h1>Cadastro Instrutor</h1>
             <label for="nome">Nome</label>
             <input class="campo-inserir" type="text" name="nome" required>
