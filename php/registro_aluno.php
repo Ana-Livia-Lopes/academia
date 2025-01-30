@@ -86,8 +86,8 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             echo respostaJSON("sucesso", "Aluno $nome registrado com sucesso.");
 
             $_SESSION['id'] = $stmt->insert_id;
-            $_SESSION['nome'] = $aluno['aluno_nome'];
-            $_SESSION['email'] = $aluno['aluno_email'];
+            $_SESSION['nome'] = $nome;
+            $_SESSION['email'] = $email;
             $_SESSION['nivel'] = "aluno";
         } else {
             echo respostaJSON("erro", "Erro ao registrar aluno.");

@@ -26,10 +26,10 @@
             <input class="campo-inserir" type="email" name="email" required>
 
             <label for="end_aluno">Endereço</label>
-            <input class="campo-inserir" type="text" name="end_aluno" required>
+            <input class="campo-inserir" type="text" name="endereco" required>
 
             <label for="tel_aluno">Telefone</label>
-            <input class="campo-inserir" type="tel" name="tel_aluno" required>
+            <input class="campo-inserir" type="tel" name="telefone" required>
             
             <label for="senha">Senha</label>
             <input class="campo-inserir" id="senha-campo" type="password" name="senha" required>

@@ -27,7 +27,7 @@ if (formCadastroAluno) {
         event.preventDefault();
         const form = event.target;
 
-        registroAluno(form.nome.value, form.email.value, form.senha.value);
+        registroAluno(form.nome.value, form.email.value, form.senha.value, form.cpf.value, form.endereco.value, form.telefone.value);
     });
 }
 
