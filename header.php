@@ -109,6 +109,7 @@
     z-index: 50;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     transition: all 0.4s ease;
+    width: 100%;
 }
 
 #header.ativo{

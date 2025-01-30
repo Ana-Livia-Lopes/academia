@@ -20,6 +20,7 @@
     <!-- <?php include 'header.php';?> -->
     <link rel="stylesheet" href="pagAluno.css">
 </head>
+<?php include 'header.php';?>
 <body>
     <div class="container">
         <h1>Alunos cadastrados</h1>
@@ -48,5 +49,6 @@
             </table>
         </div>
     </div>
+    <?php include 'footer.php';?>
 </body>
 </html>
