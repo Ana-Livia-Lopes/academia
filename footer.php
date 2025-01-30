@@ -1,10 +1,10 @@
 <footer>
             <div id="footer">
             <div class="contato">
-                <h2>Informações de Contato <strong>Power Gym</strong></h2>
+                <h2>Informações de Contato Power Gym </h2>
             </div>
                 <div class="contato">
-                    <p id="pfooter">Endereço: Rua das Palmeiras, 1234, Bairro Vista Alegre, Cidade Nova, Estado Sol Nascente</p> <p id="pfooter">Telefone: (12) 3653-1756</p> <p id="pfooter">E-mail: powe.gym@gmail.com.br</p>
+                    <p id="pfooter">Endereço: Rua das Palmeiras, 1234, Bairro Vista Alegre, Cidade Nova, Estado Sol Nascente</p> <p id="pfooter">Telefone: (12) 3653-1756</p> <p id="pfooter">E-mail: power.gym@gmail.com.br</p>
             
                 </div> 
             
@@ -32,12 +32,13 @@ footer {
 }
 
 footer h2 {
+    color:#d66e2d;
     margin-bottom: 10px;
     font-family: 'Montserrat', sans-serif;
 }
 
 footer p {
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.5;
     font-family: "Plus Jakarta Sans", sans-serif;
     margin-bottom: 10px;

@@ -23,7 +23,8 @@
             <div class=" pc imgSobre">
                 <div class="sobre">
                     <h1>Sobre</h1>
-                    <p>A academia FitLife é o lugar ideal para quem busca saúde, bem-estar e condicionamento físico, nós oferecemos equipamentos modernos, aulas variadas e suporte profissional. Venha treinar com a gente! 💪</p>
+                    <p>A academia Power Gym é o lugar ideal para quem busca <strong>saúde, bem-estar e condicionamento físico.</strong>
+                  <br>  Oferecemos equipamentos modernos, aulas variadas e suporte profissional. Venha treinar com a gente! 💪</p>
                 </div>
             </div>
             <div class="cel imgSobre" data-aos="fade" data-aos-duration="1000" data-aos-delay="200">
