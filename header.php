@@ -4,10 +4,69 @@
             <nav>
                 <ul id="nav1">
                     <li><h3><a id="inicio" href="./index.php">início</a></h3></li>
-                    <li><h3><a href="./pagAluno.php">Aluno</a></h3></li>
-                    <li><h3><a href="./pagInstrutor.php">Instrutor</a></h3></li>
-                    <li><h3><a href="./aulas.php">Aulas</a></h3></li>
-                    <li><h3><a href="./login.php">Entrar</a></h3></li>
+                    <li><h3><a href="./aluno.php" class="blockNAluno">Aluno</a></h3></li>
+                    <li><h3><a href="./instrutor.php" class="blockNInstrutor">Instrutor</a></h3></li>
+                    <li><h3><a href="./aulas.php" class="blockNLogin">Aulas</a></h3></li>
+                    <li id="botao-entrar"><h3><a href="./loginalu.php">Entrar</a></h3></li>
+                    <script>
+                        const botaoEntrar = document.getElementById("botao-entrar");
+                        (async function() {
+                            const check = await estaLogado();
+
+                            if (check) {
+                                botaoEntrar.parentElement.removeChild(botaoEntrar);
+                            }
+                        })()
+
+                        const bloquearLogins =document.querySelectorAll(".blockNLogin");
+                        bloquearLogins.forEach(elem => {
+                            const href =elem.href;
+                            elem.removeAttribute("href");
+                            elem.pseudoHref = href;
+                            elem.addEventListener("click", async event => {
+                                if (await estaLogado()) {
+                                    return location.href = href;
+                                }
+                                bloquearNaoLogado();
+                                event.preventDefault();
+                            });
+                        });
+
+                        const blockNInstrutor =document.querySelectorAll(".blockNInstrutor");
+                        blockNInstrutor.forEach(elem => {
+                            const href =elem.href;
+                            elem.removeAttribute("href");
+                            elem.pseudoHref = href;
+                            elem.addEventListener("click", async event => {
+                                if (await checkNivel() === "instrutor") {
+                                    return location.href = elem.pseudoHref;
+                                }
+                                Swal.fire({
+                                    icon: "error",
+                                    title: "Acesso bloqueado",
+                                    text: "Somente instrutores podem acessar esta página"
+                                });
+                                event.preventDefault();
+                            });
+                        });
+                        const blockNAluno = document.querySelectorAll(".blockNAluno");
+                        blockNAluno.forEach(elem => {
+                            const href =elem.href;
+                            elem.removeAttribute("href");
+                            elem.pseudoHref = href;
+                            elem.addEventListener("click", async event => {
+                                if (await checkNivel() === "aluno") {
+                                    return location.href = elem.pseudoHref;
+                                }
+                                Swal.fire({
+                                    icon: "error",
+                                    title: "Acesso bloqueado",
+                                    text: "Somente alunos podem acessar esta página"
+                                });
+                                event.preventDefault();
+                            });
+                        });
+                    </script>
 
                 </ul>
                 <div id="user-div">
