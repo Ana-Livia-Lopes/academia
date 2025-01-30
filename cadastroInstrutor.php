@@ -44,6 +44,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <label for="nome">Nome</label>
             <input class="campo-inserir" type="text" name="nome" required>
 
+            <label for="email">Email</label>
+            <input class="campo-inserir" type="email" name="email" required>
+
             <label for="especialidade">Especialidade</label>
             <input class="campo-inserir" id="especialidadeInst" type="text" name="especialidade" required>
             
