@@ -1,7 +1,7 @@
 <?php
     include 'php/conexao.php';
 
-    $sql_alunos= "SELECT aluno_nome, aluno_cpf, aluno_endereco, aluno_telefone FROM alunos";
+    $sql_alunos= "SELECT aluno_nome, aluno_cod, aluno_endereco, aluno_endereco, aluno_telefone FROM alunos";
     
     $resultado_alunos = $conexao->query($sql_alunos);
 
@@ -31,7 +31,7 @@
                 <thead>
                     <tr>
                         <th>Nome</th>
-                        <th>CPF</th>
+                        <th>Endereço</th>
                         <th>Telefone</th>
                         <th>Editar</th>
                         <th>Excluir</th>
@@ -43,10 +43,10 @@
                         while($linha = $resultado_alunos->fetch_assoc()){
                             echo "<tr>";
                             echo "<td>" . $linha['aluno_nome'] . "</td>";
-                            echo "<td>" . $linha['aluno_cpf'] . "</td>";
+                            echo "<td>" . $linha['aluno_endereco'] . "</td>";
                             echo "<td>" . $linha['aluno_telefone'] . "</td>";
-                            echo "<td><button class='editar'>\</button></td>";
-                            echo "<td><button class='editar'>x</button></td>";
+                            echo "<td><button class='editar' onclick='editarAluno({$linha['aluno_cod']}, recarregar)'><img src='./img/edit.svg' class='tablebutton'></button></td>";
+                            echo "<td><button class='editar' onclick='excluirAluno({$linha['aluno_cod']}, recarregar)'><img src=\"./img/cancel.svg\" class='tablebutton'></button></td>";
                             echo "<tr>";
                         }                   
                     }

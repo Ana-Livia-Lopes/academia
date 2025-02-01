@@ -1,7 +1,7 @@
 <?php
     include 'php/conexao.php';
 
-    $sql_instrutores= "SELECT instrutor_nome, instrutor_especialidade FROM instrutores";
+    $sql_instrutores= "SELECT instrutor_nome, instrutor_especialidade, instrutor_cod FROM instrutores";
     
     $resultado_instrutores = $conexao->query($sql_instrutores);
 
@@ -18,12 +18,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="pagAluno.css">
+    <?php 
+    include 'head.php';
+    ?>
 </head>
 <body>
     <?php include 'header.php';?>
-    <?php 
-    include 'head.php';
-?>
     <div class="container">
         <h1>Instrutores cadastrados</h1>
         <div class="tabela-div divIns">
@@ -43,8 +43,8 @@
                             echo "<tr>";
                             echo "<td>" . $linha['instrutor_nome'] . "</td>";
                             echo "<td>" . $linha['instrutor_especialidade'] . "</td>";
-                            echo "<td><button class='editar'>\</button></td>";
-                            echo "<td><button class='editar'>x</button></td>";
+                            echo "<td><button class='editar' onclick='editarInstrutor({$linha['instrutor_cod']}, recarregar)'><img src='./img/edit.svg' class='tablebutton'></button></td>";
+                            echo "<td><button class='editar' onclick='excluirInstrutor({$linha['instrutor_cod']}, recarregar)'><img src=\"./img/cancel.svg\" class='tablebutton'></button></td>";
                             echo "<tr>";
                         }                   
                     }

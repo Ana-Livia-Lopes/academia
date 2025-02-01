@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (!isset($_SESSION['nivel'])) {
+    header("Location: ./index.php");
+}
+if ($_SESSION['nivel'] !== "instrutor") {
+    header("Location: ./index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

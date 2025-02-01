@@ -87,6 +87,10 @@ td{
     justify-content: space-evenly;
     margin-top: 60px;
 }
+.tablebutton {
+    width: 1rem;
+    height: 1rem;
+}
 @media (max-width: 768px){
     .tabela-div{
         width: 100%;
