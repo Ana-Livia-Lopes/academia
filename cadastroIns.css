@@ -242,6 +242,18 @@ select{
     background-color: #b25922;
 }
 @media (max-width: 768px){
+    .celular{
+        opacity: 1;
+        margin-right: 28px;
+    }
+    .celular a{
+        color: white;
+        font-weight: bold;
+    }
+    .inserir{
+        width: 80%;
+        margin-right: 50px;
+    }
     body {
         padding: 10px;
     }

@@ -119,6 +119,10 @@
     font-family: 'Montserrat', sans-serif;
 }
 @media (max-width: 768px){
+    .campo-inserir{
+        width: 90%;
+        margin-right: 50px;
+    }
     body {
         padding: 10px;
     }
