@@ -661,8 +661,7 @@ async function adcionarAula() {
             <option value="Alongamento">Alongamento</option>
             <option value="Luta">Luta</option>
         </select>
-        <input id="swal-input3" class="swal2-input custom-swal-default-width" placeholder="Email do Instrutor">
-        <input id="swal-input4" class="swal2-input custom-swal-default-width" placeholder="Email do Aluno">
+        <input id="swal-input4" class="swal4-input custom-swal-default-width custom-swal-select" placeholder="Email do Aluno">
         <style>
         .custom-swal-default-width {
             width: 60%;
@@ -683,20 +682,41 @@ async function adcionarAula() {
         </style>
     `,
         focusConfirm: false,
-        confirmButtonText: "Alterar",
+        confirmButtonText: "Adcionar",
         showCloseButton: true,
         showDenyButton: true,
         denyButtonText: "Cancelar",
         preConfirm: () => {
             const values = {
-                nome: document.getElementById('swal-input1').value,
-                endereco: document.getElementById('swal-input2').value,
-                telefone: document.getElementById('swal-input3').value
+                data: document.getElementById('swal-input1').value,
+                tipo: document.getElementById('swal-input2').value,
+                aluno: document.getElementById('swal-input4').value
             }
             for (const [ key, value ] of Object.entries(values)) {
                 if (!value) delete values[key]
             }
             return values;
         }
-    })
+    }).then((result) => {
+        if (result.isConfirmed) {
+                Swal.fire({
+                    title: "Editando aula...",
+                    icon: "question",
+                    html: `
+                        <h3>Informações a serem adcionadas:</h3>
+                        ${result.value.data ? "<p><b>Dia da Semana:</b> " + result.value.data + "</p>" : ""}
+                        ${result.value.tipo ? "<p><b>Modalidade:</b> " + result.value.tipo + "</p>" : ""}
+                        ${result.value.aluno ? "<p><b>Email do Aluno:</b> " + result.value.aluno + "</p>" : ""}
+                    `,
+                    focusConfirm: false,
+                    confirmButtonText: "Confirmar",
+                    denyButtonText: "Cancelar",
+                    showDenyButton: true,
+                    showCloseButton: true
+                }).then(() => {
+                    crudAula("update", { id, ...result.value });
+                    if (callback) callback()
+                });
+        }
+    });
 }
