@@ -58,6 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 $_SESSION['email'] = $aluno['aluno_email'];
                 $_SESSION['nome'] = $aluno['aluno_nome'];
                 $_SESSION['nivel'] = "aluno";
+                $_SESSION['id'] = $aluno['aluno_cod'];
                 echo respostaJSON("sucesso", "Olá, {$aluno['aluno_nome']}");
             } else {
                 echo respostaJSON("erro", "Senha incorreta.");

@@ -209,7 +209,7 @@ async function checkNivel() {
     return (await (fetch("./php/checkNivel.php")).then(resp => resp.text()));
 }
 
-async function crudAluno(action, data, callback) {
+async function crudAluno(action, data, callback = () => {}) {
     const post = new FormData();
     if (action) post.append("action", action);
     for (const key in data) {
@@ -244,7 +244,7 @@ async function crudAluno(action, data, callback) {
     });
 }
 
-async function crudAula(action, data) {
+async function crudAula(action, data, callback = () => {}) {
     const post = new FormData();
     if (action) post.append("action", action);
     for (const key in data) {
@@ -266,7 +266,7 @@ async function crudAula(action, data) {
                     icon: "success",
                     title: "Edição bem-sucedida",
                     text: resp.mensagem
-                });
+                }).then(callback);
             }
             if (resp.status === "erro") {
                 Swal.fire({
@@ -279,7 +279,7 @@ async function crudAula(action, data) {
     });
 }
 
-async function crudInstrutor(action, data) {
+async function crudInstrutor(action, data, callback = () => {}) {
     const post = new FormData();
     if (action) post.append("action", action);
     for (const key in data) {
@@ -301,7 +301,7 @@ async function crudInstrutor(action, data) {
                     icon: "success",
                     title: "Edição bem-sucedida",
                     text: resp.mensagem
-                });
+                }).then(callback);
             }
             if (resp.status === "erro") {
                 Swal.fire({
@@ -316,6 +316,14 @@ async function crudInstrutor(action, data) {
 
 function recarregar() {
     window.location.reload();
+}
+
+function alertEdicaoCancelada() {
+    Swal.fire({
+        icon: "info",
+        title: "Edição cancelada",
+        text: "Nenhuma informação foi alterada."
+    });
 }
 
 async function editarAluno(id, callback) {
@@ -370,8 +378,12 @@ async function editarAluno(id, callback) {
                     denyButtonText: "Cancelar",
                     showDenyButton: true,
                     showCloseButton: true
-                }).then(() => {
-                    crudAluno("update", { id, ...result.value}, callback);
+                }).then(confirmResult => {
+                    if (confirmResult.isConfirmed) {
+                        crudAluno("update", { id, ...result.value}, callback);
+                    } else {
+                        alertEdicaoCancelada();
+                    }
                 });
             }
         }
@@ -450,9 +462,12 @@ async function editarInstrutor(id, callback) {
                     denyButtonText: "Cancelar",
                     showDenyButton: true,
                     showCloseButton: true
-                }).then(() => {
-                    crudInstrutor("update", { id, ...result.value });
-                    if (callback) callback()
+                }).then(confirmResult => {
+                    if (confirmResult.isConfirmed) {
+                        crudInstrutor("update", { id, ...result.value }, callback);
+                    } else {
+                        alertEdicaoCancelada();
+                    }
                 });
             }
         }
@@ -546,9 +561,12 @@ async function editarAula(id, callback) {
                     denyButtonText: "Cancelar",
                     showDenyButton: true,
                     showCloseButton: true
-                }).then(() => {
-                    crudAula("update", { id, ...result.value });
-                    if (callback) callback()
+                }).then(confirmResult => {
+                    if (confirmResult.isConfirmed) {
+                        crudAula("update", { id, ...result.value }, callback);
+                    } else {
+                        alertEdicaoCancelada();
+                    }
                 });
             }
         }
@@ -635,10 +653,29 @@ async function excluirAula(id, callback) {
 
 // em edição, não ta pronto 
 
+async function checkLoginInfo(info) {
+    const post = new FormData();
+    if (info) post.append("info", String(info));
 
-async function adcionarAula() {
+    const request = await fetch("./php/get_login_info.php", { method: "POST", body: post });
+    const text = await request.text();
+    return text;
+}
+
+async function adicionarAula(callback = () => {}) {
+    const instrutor = await checkLoginInfo("email");
+    const nivel = await checkLoginInfo("nivel");
+
+    if (nivel !== "instrutor") {
+        return Swal.fire({
+            title: "Permissão insuficiente",
+            icon: "error",
+            text: "Somente instrutores podem criar suas aulas"
+        });
+    }
+
     Swal.fire({
-        title: 'Adcionar aula',
+        title: 'Adicionar aula',
         html: `
         <select id="swal-input1" class="swal2-input custom-swal-default-width custom-swal-select">
             <option value="" selected>Dia da Semana</option>
@@ -682,7 +719,7 @@ async function adcionarAula() {
         </style>
     `,
         focusConfirm: false,
-        confirmButtonText: "Adcionar",
+        confirmButtonText: "Adicionar",
         showCloseButton: true,
         showDenyButton: true,
         denyButtonText: "Cancelar",
@@ -699,24 +736,64 @@ async function adcionarAula() {
         }
     }).then((result) => {
         if (result.isConfirmed) {
-                Swal.fire({
-                    title: "Editando aula...",
-                    icon: "question",
-                    html: `
-                        <h3>Informações a serem adcionadas:</h3>
-                        ${result.value.data ? "<p><b>Dia da Semana:</b> " + result.value.data + "</p>" : ""}
-                        ${result.value.tipo ? "<p><b>Modalidade:</b> " + result.value.tipo + "</p>" : ""}
-                        ${result.value.aluno ? "<p><b>Email do Aluno:</b> " + result.value.aluno + "</p>" : ""}
-                    `,
-                    focusConfirm: false,
-                    confirmButtonText: "Confirmar",
-                    denyButtonText: "Cancelar",
-                    showDenyButton: true,
-                    showCloseButton: true
-                }).then(() => {
-                    crudAula("update", { id, ...result.value });
-                    if (callback) callback()
+            const faltando = [];
+
+            if (!result.value.data) faltando.push("Data");
+            if (!result.value.tipo) faltando.push("Tipo");
+            if (!result.value.aluno) faltando.push("Aluno");
+
+            if (faltando.length > 0) {
+                return Swal.fire({
+                    icon: "warning",
+                    title: "Adicionando aula...",
+                    text: "Faltam informações obrigatórias: " + faltando.join(", ")
                 });
+            }
+
+            Swal.fire({
+                title: "Editando aula...",
+                icon: "question",
+                html: `
+                    <h3>Informações a serem adicionadas:</h3>
+                    ${result.value.data ? "<p><b>Dia da Semana:</b> " + result.value.data + "</p>" : ""}
+                    ${result.value.tipo ? "<p><b>Modalidade:</b> " + result.value.tipo + "</p>" : ""}
+                    ${result.value.aluno ? "<p><b>Email do Aluno:</b> " + result.value.aluno + "</p>" : ""}
+                    ${instrutor ? "<p><b>Email do Instrutor:</b> " + instrutor + "</p>" : ""}
+                `,
+                focusConfirm: false,
+                confirmButtonText: "Confirmar",
+                denyButtonText: "Cancelar",
+                showDenyButton: true,
+                showCloseButton: true
+            }).then(async () => {
+                const post = new FormData();
+
+                const { data, tipo, aluno } = result.value;
+
+                post.append("data", data)
+                post.append("tipo", tipo)
+                post.append("instrutor", instrutor)
+                post.append("aluno", aluno)
+
+                const request = await fetch("./php/registro_aula.php", { method: "POST", body: post });
+
+                const responseJSON = await request.json();
+
+                if (responseJSON.status === "erro") {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Erro na criação da aula",
+                        text: responseJSON.mensagem
+                    });
+                }
+                if (responseJSON.status === "sucesso") {
+                    Swal.fire({
+                        icon: "success",
+                        title: "Aula criada",
+                        text: responseJSON.mensagem
+                    }).then(callback);
+                }
+            });
         }
     });
 }

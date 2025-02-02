@@ -4,55 +4,55 @@
             <nav>
                 <ul id="nav1">
                     <li><h3><a id="inicio" href="./index.php">início</a></h3></li>
-                    <li><h3><a href="./pagAluno.php" class="blockNAluno">Aluno</a></h3></li>
-                    <li><h3><a href="./pagInstrutor.php" class="blockNInstrutor">Instrutor</a></h3></li>
-                    <li><h3><a href="./aulas.php" class="blockNLogin">Aulas</a></h3></li>
-                    <li><h3><a href="./loginalu.php" id="botao-entrar">Entrar</a></h3></li>
+                    <li><h3><a href="./pagAluno.php" class="blockAccess" autorized="aluno instrutor">Aluno</a></h3></li>
+                    <li><h3><a href="./pagInstrutor.php" class="blockAccess" autorized="instrutor">Instrutor</a></h3></li>
+                    <li><h3><a href="./aulas.php" class="blockAccess" autorized="aluno instrutor">Aulas</a></h3></li>
+                    <li><h3><a class="botaoEntrar">Entrar</a></h3></li>
                     <script>
-                        const botaoEntrar = document.getElementById("botao-entrar");
-                        (async function() {
-                            const check = await estaLogado();
+                        // const botaoEntrar = document.getElementById("botao-entrar");
+                        // (async function() {
+                        //     const check = await estaLogado();
 
-                            if (check) {
-                                botaoEntrar.removeAttribute("href");
-                                botaoEntrar.addEventListener("click", () => {
-                                    logout();
-                                });
-                                botaoEntrar.innerHTML = "Sair";
-                            }
-                        })()
+                        //     if (check) {
+                        //         botaoEntrar.removeAttribute("href");
+                        //         botaoEntrar.addEventListener("click", () => {
+                        //             logout();
+                        //         });
+                        //         botaoEntrar.innerHTML = "Sair";
+                        //     }
+                        // })()
 
-                        const bloquearLogins =document.querySelectorAll(".blockNLogin");
-                        bloquearLogins.forEach(elem => {
-                            const href =elem.href;
-                            elem.removeAttribute("href");
-                            elem.pseudoHref = href;
-                            elem.addEventListener("click", async event => {
-                                if (await estaLogado()) {
-                                    return location.href = href;
-                                }
-                                bloquearNaoLogado();
-                                event.preventDefault();
-                            });
-                        });
+                        // const bloquearLogins =document.querySelectorAll(".blockNLogin");
+                        // bloquearLogins.forEach(elem => {
+                        //     const href =elem.href;
+                        //     elem.removeAttribute("href");
+                        //     elem.pseudoHref = href;
+                        //     elem.addEventListener("click", async event => {
+                        //         if (await estaLogado()) {
+                        //             return location.href = href;
+                        //         }
+                        //         bloquearNaoLogado();
+                        //         event.preventDefault();
+                        //     });
+                        // });
 
-                        const blockNInstrutor =document.querySelectorAll(".blockNInstrutor");
-                        blockNInstrutor.forEach(elem => {
-                            const href =elem.href;
-                            elem.removeAttribute("href");
-                            elem.pseudoHref = href;
-                            elem.addEventListener("click", async event => {
-                                if (await checkNivel() === "instrutor") {
-                                    return location.href = elem.pseudoHref;
-                                }
-                                Swal.fire({
-                                    icon: "error",
-                                    title: "Acesso bloqueado",
-                                    text: "Somente instrutores podem acessar esta página"
-                                });
-                                event.preventDefault();
-                            });
-                        });
+                        // const blockNInstrutor =document.querySelectorAll(".blockNInstrutor");
+                        // blockNInstrutor.forEach(elem => {
+                        //     const href =elem.href;
+                        //     elem.removeAttribute("href");
+                        //     elem.pseudoHref = href;
+                        //     elem.addEventListener("click", async event => {
+                        //         if (await checkNivel() === "instrutor") {
+                        //             return location.href = elem.pseudoHref;
+                        //         }
+                        //         Swal.fire({
+                        //             icon: "error",
+                        //             title: "Acesso bloqueado",
+                        //             text: "Somente instrutores podem acessar esta página"
+                        //         });
+                        //         event.preventDefault();
+                        //     });
+                        // });
                         
                     </script>
 
@@ -75,10 +75,56 @@
                     <li><h3><a href="/pagAluno.php">Aluno</a></h3></li>
                     <li><h3><a href="./pagInstrutor.php">Instrutor</a></h3></li>
                     <li><h3><a href="./aulas.php">Aulas</a></h3></li>
-                    <li><h3><a href="./loginAlu.php">Entrar</a></h3></li>
+                    <li><h3><a href="./loginAlu.php" class="botaoEntrar">Entrar</a></h3></li>
                 </ul>
             </nav>
         </div>
+
+        <script>
+            async function bloquearAcesso(destino = "./", ...autorizados) {
+                const nivel = await checkNivel();
+
+                if (!autorizados.includes(nivel)) {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Acesso bloqueado",
+                        text: `Você não tem autorização para acessar esta página`
+                    });
+                } else {
+                    redirecionar(destino);
+                }
+            }
+
+            (async function() {
+                const logado = await estaLogado();
+
+                document.querySelectorAll(".botaoEntrar").forEach(element => {
+                    if (logado) {
+                        element.innerHTML = "Sair";
+                        element.addEventListener("click", () => {
+                            logout();
+                        })
+                    } else {
+                        element.href = "./loginalu.php";
+                    }
+                })
+            })()
+
+            const blockAccessElements =document.querySelectorAll(".blockAccess");
+
+            blockAccessElements.forEach(element => {
+                if (!element.href) return;
+                const href =element.href;
+                element.storedHref = href;
+                element.removeAttribute("href");
+                const autorizedAttr =element.getAttribute("autorized");
+                const autorized =autorizedAttr ?autorizedAttr.split(" ") : [];
+
+                element.addEventListener("click", () => {
+                    bloquearAcesso(href, ...autorized);
+                });
+            });
+        </script>
     </header>
 
 

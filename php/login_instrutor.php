@@ -58,6 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 $_SESSION['email'] = $instrutor['instrutor_email'];
                 $_SESSION['nome'] = $instrutor['instrutor_nome'];
                 $_SESSION['nivel'] = "instrutor";
+                $_SESSION['id'] = $instrutor['instrutor_cod'];
 
                 echo respostaJSON("sucesso", "Olá, {$instrutor['instrutor_nome']}.");
             } else {

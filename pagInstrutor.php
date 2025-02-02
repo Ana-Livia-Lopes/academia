@@ -56,7 +56,7 @@
     <div id="botoes">
         <a href="./cadastroAluno.php"><button class="botaoCadastar">Cadastrar aluno</button></a>
         <a href="./cadastroInstrutor.php"><button class="botaoCadastar">Cadastrar instrutor</button></a>
-        <button onclick="adcionarAula()" class="botaoCadastar adcionarAula">adcionar aula</button>
+        <button onclick="adicionarAula()" class="botaoCadastar adcionarAula">Adicionar aula</button>
     </div>
     <?php include 'footer.php';?>
 </body>
