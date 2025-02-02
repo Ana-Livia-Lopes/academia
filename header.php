@@ -53,23 +53,7 @@
                                 event.preventDefault();
                             });
                         });
-                        const blockNAluno = document.querySelectorAll(".blockNAluno");
-                        blockNAluno.forEach(elem => {
-                            const href =elem.href;
-                            elem.removeAttribute("href");
-                            elem.pseudoHref = href;
-                            elem.addEventListener("click", async event => {
-                                if (await checkNivel() === "aluno") {
-                                    return location.href = elem.pseudoHref;
-                                }
-                                Swal.fire({
-                                    icon: "error",
-                                    title: "Acesso bloqueado",
-                                    text: "Somente alunos podem acessar esta página"
-                                });
-                                event.preventDefault();
-                            });
-                        });
+                        
                     </script>
 
                 </ul>
