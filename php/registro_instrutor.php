@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     if (strlen($senha) < 6|| strlen($senha) > 64) array_push($incorreto, "Tamanho da Senha (6 a 64)");
     if (!in_array($especialidade, [
         "Pilates", "Crossfit", "Musculação", "Yoga", "Aeróbica", "Ginástica", "Alongamento", "Luta"
-    ])) array_push($incorreto, "Modalidade desconhecida.");
+    ])) array_push($incorreto, "Modalidade desconhecida");
     
     if (count($incorreto) > 0) {
         echo respostaJSON("erro", "Campos incorretos: " . implode(", ", $incorreto));
