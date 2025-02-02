@@ -614,3 +614,89 @@ async function excluirAula(id, callback) {
         }
     });
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// em edição, não ta pronto 
+
+
+async function adcionarAula() {
+    Swal.fire({
+        title: 'Adcionar aula',
+        html: `
+        <select id="swal-input1" class="swal2-input custom-swal-default-width custom-swal-select">
+            <option value="" selected>Dia da Semana</option>
+            <option value="Segunda-feira">Segunda-feira</option>
+            <option value="Terça-feira">Terça-feira</option>
+            <option value="Quarta-feira">Quarta-feira</option>
+            <option value="Quinta-feira">Quinta-feira</option>
+            <option value="Sexta-feira">Sexta-feira</option>
+            <option value="Sábado">Sábado</option>
+            <option value="Domingo">Domingo</option>
+        </select>
+        <select id="swal-input2" class="swal2-input custom-swal-default-width custom-swal-select">
+            <option value="" selected>Modalidade</option>
+            <option value="Pilates">Pilates</option>
+            <option value="Crossfit">Crossfit</option>
+            <option value="Musculação">Musculação</option>
+            <option value="Yoga">Yoga</option>
+            <option value="Aeróbica">Aeróbica</option>
+            <option value="Ginástica">Ginástica</option>
+            <option value="Alongamento">Alongamento</option>
+            <option value="Luta">Luta</option>
+        </select>
+        <input id="swal-input3" class="swal2-input custom-swal-default-width" placeholder="Email do Instrutor">
+        <input id="swal-input4" class="swal2-input custom-swal-default-width" placeholder="Email do Aluno">
+        <style>
+        .custom-swal-default-width {
+            width: 60%;
+        }
+        .custom-swal-select {
+            margin-top: 1rem;
+            height: 2.625em;
+            padding: 0 .75em;
+            box-sizing: border-box;
+            transition: border-color .1s, box-shadow .1s;
+            border: 1px solid #d9d9d9;
+            border-radius: .1875em;
+            background: rgba(0, 0, 0, 0);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .06), 0 0 0 3px rgba(0, 0, 0, 0);
+            color: inherit;
+            font-size: 1.125em;
+        }
+        </style>
+    `,
+        focusConfirm: false,
+        confirmButtonText: "Alterar",
+        showCloseButton: true,
+        showDenyButton: true,
+        denyButtonText: "Cancelar",
+        preConfirm: () => {
+            const values = {
+                nome: document.getElementById('swal-input1').value,
+                endereco: document.getElementById('swal-input2').value,
+                telefone: document.getElementById('swal-input3').value
+            }
+            for (const [ key, value ] of Object.entries(values)) {
+                if (!value) delete values[key]
+            }
+            return values;
+        }
+    })
+}

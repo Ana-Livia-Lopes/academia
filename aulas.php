@@ -2,8 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['nivel'])) {
-    header("Location: index.php");
-    
+    header("Location: index.php");  
 }
 $nivel = $_SESSION['nivel'];
 if ($nivel === "instrutor") {
@@ -46,13 +45,15 @@ $aulas = $stmt->get_result();
                 <th>Modalidade</th>
                 <th>Instrutor</th>
                 <th>Data</th>
+                <th>Editar</th>
+                <th>Excluir</th>
             </tr>
         </thead>
         <tbody>
             <?php
             if ($aulas->num_rows >0 ){
                 while($linha = $aulas->fetch_assoc()){
-                echo"<tr><td>".$linha['aula_tipo']."</td><td>".$linha['instrutor_nome']."</td><td>".$linha['aula_data']."</td></tr>";
+                echo"<tr><td>".$linha['aula_tipo']."</td><td>".$linha['instrutor_nome']."</td><td>".$linha['aula_data']."</td><td><button class='editar' onclick='editarAluno({$linha['aluno_cod']}, recarregar)'><img src='./img/edit.svg' class='tablebutton'></button></td><td><button class='editar' onclick='excluirAluno({$linha['aluno_cod']}, recarregar)'><img src=\"./img/cancel.svg\" class='tablebutton'></button></td></tr>";
                 }
             }
             

@@ -26,27 +26,30 @@ $aulas = $stmt->get_result();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editora Senai</title>
-    <link rel="stylesheet" href="css/aulas.css">
+    <link rel="stylesheet" href="pagAluno.css">
     <?php include './head.php' ?>
 </head>
 <body>
+    <?php include './header.php' ?>
     <div class="container">
     <h1>Aulas cadastrados</h1>
-    <div class="tabela-div"></div>
+    <div class="tabela-div">
     <table>
         <hr>
         <thead>
             <tr>
-                <th>modalidade</th>
-                <th>aluno</th>
-                <th>data</th>
+                <th>Modalidade</th>
+                <th>Aluno</th>
+                <th>Data</th>
+                <th>Editar</th>
+                <th>Excluir</th>
             </tr>
         </thead>
         <tbody>
             <?php
             if ($aulas->num_rows >0 ){
                 while($linha = $aulas->fetch_assoc()){
-                echo"<tr><td>".$linha['aula_tipo']."</td><td>".$linha['aluno_nome']."</td><td>".$linha['aula_data']."</td></tr>";
+                echo"<tr><td>".$linha['aula_tipo']."</td><td>".$linha['aluno_nome']."</td><td>".$linha['aula_data']."</td><td><button class='editar' onclick='editarAluno({$linha['aluno_cod']}, recarregar)'><img src='./img/edit.svg' class='tablebutton'></button></td><td><button class='editar' onclick='excluirAluno({$linha['aluno_cod']}, recarregar)'><img src=\"./img/cancel.svg\" class='tablebutton'></button></td></tr>";
                 }
             }
             
@@ -54,5 +57,6 @@ $aulas = $stmt->get_result();
         </tbody>
     </table>  
     </div>  
+    <?php include './footer.php' ?>
 </body>
 </html>
