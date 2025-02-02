@@ -57,6 +57,9 @@ $aulas = $stmt->get_result();
         </tbody>
     </table>  
     </div>  
-    <?php include './footer.php' ?>
 </body>
+<?php include './footer.php' ?>
+<style>
+    
+</style>
 </html>
