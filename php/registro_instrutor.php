@@ -3,11 +3,6 @@ include './conexao.php';
 header("Content-Type: application/json");
 session_start();
 
-if (isset($_SESSION['nivel'])) {
-    echo respostaJSON("erro", "Sessão já iniciada.");
-    exit;
-}
-
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $faltando = [];
     if (!isset($_POST['nome'])) array_push($faltando, "Nome");

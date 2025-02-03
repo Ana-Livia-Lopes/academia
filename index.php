@@ -52,7 +52,7 @@
             </div>
         </div>
         </a>
-        <a href="">
+        <a href="aulas.php">
 
         <div class="card">
             <div class="quadrado q1">
@@ -68,7 +68,7 @@
             </div>
         </div>
         </a>
-        <a href="">
+        <a href="aulas.php">
 
         <div class="card">
             <div class="quadrado q1">
@@ -84,7 +84,7 @@
             </div>
         </div>
         </a>
-        <a href="">
+        <a href="aulas.php">
         <div class="card">
             <div class="quadrado q1">
                 <div class="content">
@@ -103,7 +103,7 @@
         
     </div>
     <div class="container" data-aos="fade" data-aos-duration="1000" data-aos-delay="200">
-        <a href="">
+        <a href="aulas.php">
     <div class="card">
             <div class="quadrado q1">
                 <div class="content">
@@ -118,7 +118,7 @@
             </div>
         </div>
         </a>
-        <a href="">
+        <a href="aulas.php">
         <div class="card">
             <div class="quadrado q1">
                 <div class="content">
@@ -134,7 +134,7 @@
         </div>
 
         </a>
-        <a href="">
+        <a href="aulas.php">
         <div class="card">
             <div class="quadrado q1">
                 <div class="content">
@@ -149,7 +149,7 @@
             </div>
         </div>
         </a>
-        <a href="">
+        <a href="aulas.php">
         <div class="card">
             <div class="quadrado q1">
                 <div class="content">

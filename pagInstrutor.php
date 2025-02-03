@@ -53,10 +53,12 @@
             </table>
         </div>
     </div>
-    <div id="botoes">
-        <a href="./cadastroAluno.php"><button class="botaoCadastar">Cadastrar aluno</button></a>
-        <a href="./cadastroInstrutor.php"><button class="botaoCadastar">Cadastrar instrutor</button></a>
-        <button onclick="adicionarAula()" class="botaoCadastar adcionarAula">Adicionar aula</button>
+    <div id="alinhamento">
+        <div id="botoes">
+            <div class="d"><button onclick="window.location.href='./cadastroAluno.php';" class="botaoCadastar">Cadastrar aluno</button></div>
+            <div class="d"><button onclick="window.location.href='./cadastroInstrutor.php';" class="botaoCadastar">Cadastrar instrutor</button></div>
+            <div class="d"><button onclick="adicionarAula()" class="botaoCadastar adcionarAula">Adicionar aula</button>
+        </div>
     </div>
     <?php include 'footer.php';?>
 </body>

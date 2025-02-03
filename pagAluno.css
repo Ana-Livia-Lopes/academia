@@ -6,6 +6,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    
 }
 html {
     background-color: rgb(207, 207, 207);
@@ -86,6 +87,14 @@ td{
     align-items: center;
     justify-content: space-evenly;
     margin-top: 60px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#alinhamento{
+    display: inline-block;
+    width: 100%;
+
 }
 .tablebutton {
     width: 1rem;
@@ -93,7 +102,35 @@ td{
 }
 @media (max-width: 768px){
     .tabela-div{
+        width: 80%;
+        overflow-x: auto
+    }
+    .container h1{
+        font-size: 25px;
+    }
+    .container{
         width: 100%;
     }
-    
+    #botoes{
+        flex-wrap: wrap;
+        margin-top: 20px;
+        width: 90%;
+    }
+    .botaoCadastar{
+        margin: 10px;
+        width: 100%;
+    }
+    .d{
+        width: 80%;
+    }
+}
+#alinhamento{
+    display: block;
+}
+.d{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -72,10 +72,10 @@
                 <label for="checkbox" id="botao">☰</label>
                 <ul id="nav2">
                     <li><h3><a id="inicio" href="./index.php">início</a></h3></li>
-                    <li><h3><a href="/pagAluno.php">Aluno</a></h3></li>
-                    <li><h3><a href="./pagInstrutor.php">Instrutor</a></h3></li>
-                    <li><h3><a href="./aulas.php">Aulas</a></h3></li>
-                    <li><h3><a href="./loginAlu.php" class="botaoEntrar">Entrar</a></h3></li>
+                    <li><h3><a href="./pagAluno.php" class="blockAccess" autorized="aluno instrutor">Aluno</a></h3></li>
+                    <li><h3><a href="./pagInstrutor.php" class="blockAccess" autorized="instrutor">Instrutor</a></h3></li>
+                    <li><h3><a href="./aulas.php" class="blockAccess" autorized="aluno instrutor">Aulas</a></h3></li>
+                    <li><h3><a class="botaoEntrar">Entrar</a></h3></li>
                 </ul>
             </nav>
         </div>
@@ -248,7 +248,7 @@ a:hover{
 #botao{
     display: none;
     font-size: 40px;
-    color:#d66e2d;
+    color:rgb(255, 157, 96);
     cursor: pointer;
     float: right;
     margin-right: 10%;
@@ -262,7 +262,7 @@ a:hover{
     right: 0;
     width: 200px;
     z-index: 1; 
-    border: solid 5px #d66e2d);
+    border: solid 5px #d66e2d;
 }
 
 @media (max-width: 768px) {

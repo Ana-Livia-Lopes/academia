@@ -57,6 +57,15 @@ footer p {
     #footer p{
         font-size: 13px;
     }
-
+    .contato {
+        margin-top: 0px;
+    }
+    h2{
+        margin-top: 0px;
+    }
+    .contato {
+        justify-content: space-evenly;
+        display: block;
+    }
 }
         </style>
