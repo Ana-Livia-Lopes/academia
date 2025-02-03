@@ -80,11 +80,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         
         if ($stmt->affected_rows > 0) {
             echo respostaJSON("sucesso", "Aluno $nome registrado com sucesso.");
-
-            $_SESSION['id'] = $stmt->insert_id;
-            $_SESSION['nome'] = $nome;
-            $_SESSION['email'] = $email;
-            $_SESSION['nivel'] = "aluno";
         } else {
             echo respostaJSON("erro", "Erro ao registrar aluno.");
         }
