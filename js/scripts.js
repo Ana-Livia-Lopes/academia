@@ -37,8 +37,6 @@ async function registroAluno(nome, email, senha, cpf, endereco, telefone) {
                     icon: "success",
                     title: "Registro efetuado",
                     text: resp.mensagem
-                }).then(() => {
-                    window.location.href = "./index.php";
                 });
             }
             if (resp.status === "erro") {
@@ -73,8 +71,6 @@ async function registroInstrutor(nome, email, senha, especialidade) {
                     icon: "success",
                     title: "Registro efetuado",
                     text: resp.mensagem
-                }).then(() => {
-                    window.location.href = "./index.php";
                 });
             }
             if (resp.status === "erro") {
