@@ -29,6 +29,9 @@ html {
     margin-left: auto;
     margin-right: auto;
 }
+.divAulaIns{
+    width: 34%;
+}
 .divIns{
     width: 71.5%;
 }
@@ -55,6 +58,8 @@ th, tr{
 table{
     padding: 10px;
     border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 td, th, .botaoCadastar{
     border: #d66e2d solid 2px;

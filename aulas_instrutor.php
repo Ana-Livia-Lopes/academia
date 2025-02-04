@@ -32,34 +32,39 @@ $aulas = $stmt->get_result();
 <body>
     <?php include './header.php' ?>
     <div class="container">
-    <h1>Aulas cadastrados</h1>
-    <div class="tabela-div">
-    <table>
-        <hr>
-        <thead>
-            <tr>
-                <th>Modalidade</th>
-                <th>Aluno</th>
-                <th>Data</th>
-                <th>Editar</th>
-                <th>Excluir</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            if ($aulas->num_rows >0 ){
-                while($linha = $aulas->fetch_assoc()){
-                echo"<tr><td>".$linha['aula_tipo']."</td><td>".$linha['aluno_nome']."</td><td>".$linha['aula_data']."</td><td><button class='editar' onclick='editarAula({$linha['aula_cod']}, recarregar)'><img src='./img/edit.svg' class='tablebutton'></button></td><td><button class='editar' onclick='excluirAula({$linha['aula_cod']}, recarregar)'><img src=\"./img/cancel.svg\" class='tablebutton'></button></td></tr>";
+    <h1>Aulas cadastradas</h1>
+    <div class="tabela-div divAulaIns">
+        <table>
+            <hr>
+            <thead>
+                <tr>
+                    <th>Modalidade</th>
+                    <th>Aluno</th>
+                    <th>Data</th>
+                    <th>Editar</th>
+                    <th>Excluir</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                if ($aulas->num_rows >0 ){
+                    while($linha = $aulas->fetch_assoc()){
+                    echo"<tr><td>".$linha['aula_tipo']."</td><td>".$linha['aluno_nome']."</td><td>".$linha['aula_data']."</td><td><button class='editar' onclick='editarAula({$linha['aula_cod']}, recarregar)'><img src='./img/edit.svg' class='tablebutton'></button></td><td><button class='editar' onclick='excluirAula({$linha['aula_cod']}, recarregar)'><img src=\"./img/cancel.svg\" class='tablebutton'></button></td></tr>";
+                    }
                 }
-            }
-            
-            ?>
-        </tbody>
-    </table>  
+                
+                ?>
+            </tbody>
+        </table>  
     </div>  
+    <?php include './footer.php' ?>
+    <style>
+        #footer {
+        background-color: rgb(255, 255, 255);
+        color: black;
+        width: 1545px;
+        margin-top: 300px;
+    }
+    </style>
 </body>
-<?php include './footer.php' ?>
-<style>
-    
-</style>
 </html>
