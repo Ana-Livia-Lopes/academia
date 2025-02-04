@@ -21,7 +21,8 @@
                     <label for="senha">Senha</label>
                     <input id="senha-campo" class="inserir" type="password" name="senha" required>
                     <div id='mostrar'>
-                        <input type='checkbox' onclick='mostrarSenha()'> Mostrar senha
+                        <input type='checkbox' onclick='mostrarSenha()'> Mostrar senha <br>
+                        <button class="botaoVoltar" onclick="history.back()">⭠ Voltar</button>
                     </div>
 
                     <?php

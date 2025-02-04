@@ -29,6 +29,7 @@
             
             <button id="botao-cadastrar" type="submit">Entrar</button>
             <a id="a" href="loginIns.php">Você é um instrutor? Clique aqui!</a>
+            <button class="botaoVoltar" onclick="history.back()">⭠ Voltar</button>
         </form>
     </div>
 </section>

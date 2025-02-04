@@ -46,7 +46,8 @@ if ($_SESSION['nivel'] !== "instrutor") {
             <label for="senha">Senha</label>
             <input class="campo-inserir" id="senha-campo" type="password" name="senha" required>
             <div id='mostrar'>
-                <input type='checkbox' onclick='mostrarSenha()'> Mostrar senha
+                <input type='checkbox' onclick='mostrarSenha()'> Mostrar senha <br>
+                <button class="botaoVoltar2" onclick="history.back()">⭠ Voltar</button>
             </div>
             
             <button id="botao-cadastrar" type="submit">Cadastrar</button>
