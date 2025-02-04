@@ -144,7 +144,7 @@ body {
 }
 /* fim sobre */
 /* cards */
-h2{
+#titulo{
     display: flex;
     align-items: center;
     justify-content: center;
