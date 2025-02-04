@@ -34,7 +34,7 @@
                 </div>
             </div>
 
-            <h2>Tipos de aulas disponíveis</h2>
+            <h2 id="titulo">Tipos de aulas disponíveis</h2>
 
             <div class="container" data-aos="fade" data-aos-duration="1000" data-aos-delay="200">
             <a href="aulas.php">

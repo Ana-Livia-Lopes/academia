@@ -98,6 +98,10 @@
     align-items: center;
     font-size: 18px;
     font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+}
+#a:hover{
+    color: rgb(98, 102, 104);
 }
 #botao-cadastrar a{
     text-decoration: none;
