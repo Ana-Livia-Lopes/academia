@@ -61,9 +61,10 @@
                 </form>
         </div>
         <div id="box-welcome">
-            <h2>Não tem uma conta?</h2>
-            <p>Entre com seus dados pessoais e comece sua jornada conosco</p>
-            <button id="cadastrar-button" onclick="window.location='./cadastroInstrutor.php'"><a href="./cadastroInstrutor.php">Cadastre-se</a></button>
+            <img src="img/logo.png" alt="">
+            <p>Entre com seus dados e continue sua jornada conosco</p>
+            <p>Power Gym</p>
+            
         </div>
     </div>
 </section>
